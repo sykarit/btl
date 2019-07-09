@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+      <add id="Aht_Blog::level1" 
+        title="AHT" 
+        translate="title" 
+        module="Aht_Blog" 
+        parent="Magento_Backend::content" 
+        sortOrder="50" 
+        dependsOnModule="Aht_Blog" 
+        resource="Aht_Blog::level1"/>
+
+        <add id="Aht_Blog::level2" 
+        title="Blog" 
+        translate="title" 
+        module="Aht_Blog" 
+        parent="Aht_Blog::level1" 
+        sortOrder="10" 
+        dependsOnModule="Aht_Blog" 
+        action="blog/index" 
+        resource="Aht_Blog::level1"/>
+                
+        <add id="Aht_Blog::blog" 
+        title="Blog" 
+        translate="title" 
+        module="Aht_Blog" 
+        sortOrder="51" 
+        dependsOnModule="Aht_Blog" 
+        resource="Aht_Blog::blog"/>
+        
+        <add id="Aht_Blog::post" 
+        title="Blog" 
+        translate="title" 
+        module="Aht_Blog" 
+        parent="Aht_Blog::blog" 
+        sortOrder="10" 
+        dependsOnModule="Aht_Blog" 
+        action="blog/post/index" 
+        resource="Aht_Blog::post"/>
+
+        <add id="Aht_Blog::blog_config" 
+        title="Configuration" 
+        translate="title" 
+        module="Aht_Blog" 
+        parent="Aht_Blog::blog" 
+        sortOrder="10" 
+        dependsOnModule="Aht_Blog" 
+        action="adminhtml/system_config/edit/section/blog" 
+        resource="Aht_Blog::blog_config"/>
+    </menu>
+</config>

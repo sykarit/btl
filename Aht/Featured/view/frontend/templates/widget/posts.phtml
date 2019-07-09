@@ -1,0 +1,74 @@
+
+<?php
+
+$urlMedia = $this->getBaseUrlMedia(); // lấy link tới hình ảnh
+$link = $urlMedia . "test/tmp"; 
+// var_dump($link);die;
+$qty_pro = (int)$this->getData("qty");
+$slider = (int)$this->getData("slider");
+$qty_slider = (int)$this->getData("qty_slider");
+$list_data = $this->getData("arr_fpro");
+$count = count($list_data);
+$qty_pro = ($qty_pro > $count)?$count:$qty_pro;
+?>
+
+<div id="btl4" class="col-md-12" >
+<h2>Bài tập lớp 4</h2>
+    <div class=" <?= $slider == '1'?'owl-carousel':'box' ?>" >
+        <?php 
+        for($i = 0;$i < $qty_pro ;$i++ ){ 
+            ?>
+        <div class="item">
+        <?php 
+        //var_dump($link ."/".$list_data[$i]['image']);die;
+         $img = $link ."/". $list_data[$i]['image'];
+         ?>
+            <img src='<?php echo $img ?>'>
+            <h3><?php echo $list_data[$i]['name'] ?></h3>
+        </div>
+        <?php } ?>
+
+      
+        
+    </div>
+</div>
+<style>
+#btl4{
+    text-align: center;
+}
+#btl4 .box{
+    display: flex;
+    flex-wrap: wrap;
+}
+#btl4 img{
+    margin:auto;
+}
+#btl4 .box .item{
+    width: 50%;
+}
+
+</style>
+<script type="text/javascript">
+    require([
+        "jquery",
+        "tuowlcarousel"
+        ], function($){
+        // $(document).ready(function() {
+        //     alert("aaa");
+        // });
+        if( $('.owl-carousel').length > 0){
+            $('.owl-carousel').owlCarousel({
+                margin: 10,
+                items: <?= $qty_slider ?>,
+                nav: true,
+                loop: true,
+                dots: true,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+            });
+            // alert("bbs");
+        }
+    });
+
+</script>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>	
+		<add id="Aht_News::post" 
+      	title="Post" 
+      	translate="title" 
+      	module="Aht_News" 
+      	sortOrder="51" 
+      	dependsOnModule="Aht_News" 
+      	resource="Aht_News::post"/>
+
+        <add id="Aht_News::contact" 
+      	title="Contact" 
+      	translate="title" 
+      	module="Aht_News" 
+      	parent="Aht_News::post" 
+      	sortOrder="10" 
+      	dependsOnModule="Aht_News" 
+      	action="uipost/index/index" 
+      	resource="Aht_News::contact"/>
+
+        <add id="Aht_News::contact_config" 
+      	title="Configuration" 
+      	translate="title" 
+      	module="Aht_News" 
+      	parent="Aht_News::post" 
+      	sortOrder="10" 
+      	dependsOnModule="Aht_News" 
+      	action="adminhtml/system_config/edit/section/post" 
+      	resource="Aht_News::contact_config"/>
+        
+    </menu>
+</config>
