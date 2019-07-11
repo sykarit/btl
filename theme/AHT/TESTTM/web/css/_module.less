@@ -1,0 +1,14 @@
+& when (@media-common = true) {
+    .block-search{
+        background:blue;
+        input:focus,input{
+            outline: none !important;
+            box-shadow: none !important;
+        }
+    }
+}
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .block-search{
+        background: red;
+    }
+}

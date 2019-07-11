@@ -1,0 +1,15 @@
+@media (min-width: 768px), print{
+    .nav-sections{
+        background-color: red;
+    }        
+}
+.nav-sections-item-content > .navigation{
+    background-color: #000;
+}
+.nav-sections-item-content .navigation .level0 > .level-top{
+    color:#fff;
+}
+.sale-main, .mens-main, .gear-main, .womens-main{
+    margin-left: auto;
+    margin-right: auto;
+}
